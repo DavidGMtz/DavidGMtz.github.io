@@ -6,113 +6,216 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    :root {
+      --azul-oscuro: #0b1f33;
+      --azul-medio: #173b5c;
+      --gris-fondo: #f5f7fa;
+      --gris-texto: #4a5568;
+      --gris-borde: #d9e2ec;
+      --blanco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      color: #222;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--gris-fondo);
+      color: #1f2933;
     }
 
     header {
-      background: #0b1f33;
-      color: white;
-      padding: 50px 24px;
+      background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-medio));
+      color: var(--blanco);
+      padding: 56px 24px;
       text-align: center;
     }
 
     header h1 {
       margin: 0;
       font-size: 34px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
     }
 
     header p {
-      margin-top: 12px;
+      margin: 14px auto 0;
+      max-width: 720px;
       font-size: 18px;
       color: #d8e2ec;
+      line-height: 1.5;
     }
 
     .container {
       max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 44px auto;
+      padding: 0 22px;
+    }
+
+    .intro {
+      margin-bottom: 28px;
+    }
+
+    .intro h2 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      color: var(--azul-oscuro);
+    }
+
+    .intro p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--gris-texto);
+      line-height: 1.6;
+      font-size: 15.5px;
     }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      gap: 24px;
+      align-items: start;
     }
 
     .card {
-      background: white;
+      display: grid;
+      grid-template-columns: 42% 58%;
+      background: var(--blanco);
+      border: 1px solid var(--gris-borde);
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.10);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+      max-width: 780px;
+      min-height: 260px;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    .card-image {
+      background: #e5eaf0;
+      min-height: 260px;
     }
 
-    .card img {
+    .card-image img {
       width: 100%;
-      height: 180px;
+      height: 100%;
       object-fit: cover;
-      background: #ddd;
+      display: block;
     }
 
     .card-content {
-      padding: 22px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-label {
+      display: inline-block;
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #edf2f7;
+      color: var(--azul-oscuro);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 12px;
     }
 
     .card h3 {
-      margin: 0 0 8px;
-      font-size: 22px;
+      margin: 0 0 10px;
+      font-size: 23px;
+      color: var(--azul-oscuro);
+    }
+
+    .description {
+      margin: 0 0 16px;
+      color: var(--gris-texto);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .tags {
+      margin-bottom: 18px;
     }
 
     .tag {
       display: inline-block;
-      background: #e8eef5;
-      color: #0b1f33;
+      background: #f0f4f8;
+      color: #243b53;
       padding: 5px 9px;
-      border-radius: 20px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      margin: 4px 4px 0 0;
+      border: 1px solid #d9e2ec;
+    }
+
+    .project-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-top: auto;
+    }
+
+    .status {
       font-size: 13px;
-      margin: 4px 4px 12px 0;
-    }
-
-    .rating {
-      color: #d4a017;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      font-size: 15px;
-      line-height: 1.5;
-      color: #444;
+      color: #52606d;
     }
 
     .button {
       display: inline-block;
-      margin-top: 12px;
       padding: 10px 16px;
-      background: #0b1f33;
-      color: white;
+      background: var(--azul-oscuro);
+      color: var(--blanco);
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: background 0.2s ease, transform 0.2s ease;
+      white-space: nowrap;
     }
 
     .button:hover {
-      background: #183a5c;
+      background: var(--azul-medio);
+      transform: translateY(-1px);
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      color: #777;
+      padding: 32px 20px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+
+      .card-image {
+        min-height: 210px;
+      }
+
+      .project-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -126,30 +229,47 @@
 
 <main class="container">
 
-  <h2>Proyectos destacados</h2>
+  <section class="intro">
+    <h2>Proyectos destacados</h2>
+    <p>
+      Portafolio de proyectos orientados a análisis de datos, visualización ejecutiva,
+      construcción de indicadores y generación de insights para apoyar la toma de decisiones.
+    </p>
+  </section>
 
   <section class="projects-grid">
 
     <article class="card">
-      <img src="assets/img/PEF.png" alt="Dashboard PEF 2026">
+      <div class="card-image">
+        <img src="assets/img/PEF.png" alt="Dashboard PEF 2026">
+      </div>
 
       <div class="card-content">
-        <h3>PEF 2026</h3>
+        <div>
+          <span class="project-label">Dashboard Ejecutivo</span>
 
-        <span class="tag">Power BI</span>
-        <span class="tag">DAX</span>
-        <span class="tag">Sector público</span>
+          <h3>PEF 2026</h3>
 
-        <div class="rating">★★★★★</div>
+          <p class="description">
+            Análisis interactivo del Presupuesto de Egresos de la Federación 2026 para
+            identificar concentración del gasto por ramo, unidad responsable y entidad federativa.
+          </p>
 
-        <p>
-          Dashboard ejecutivo para analizar el Presupuesto de Egresos de la Federación 2026
-          por ramo, unidad responsable y entidad federativa.
-        </p>
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Power Query</span>
+            <span class="tag">Sector público</span>
+          </div>
+        </div>
 
-        <a class="button" href="https://davidgmtz.github.io/proyectoBI_PEF/" target="_blank">
-          Ver proyecto
-        </a>
+        <div class="project-footer">
+          <span class="status">Caso de análisis presupuestario</span>
+
+          <a class="button" href="https://davidgmtz.github.io/proyectoBI_PEF/" target="_blank">
+            Ver proyecto
+          </a>
+        </div>
       </div>
     </article>
 
