@@ -1,1 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Portafolio de Datos | David González Martínez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    header {
+      background: #0b1f33;
+      color: white;
+      padding: 50px 24px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 34px;
+    }
+
+    header p {
+      margin-top: 12px;
+      font-size: 18px;
+      color: #d8e2ec;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: #ddd;
+    }
+
+    .card-content {
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e8eef5;
+      color: #0b1f33;
+      padding: 5px 9px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin: 4px 4px 12px 0;
+    }
+
+    .rating {
+      color: #d4a017;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 16px;
+      background: #0b1f33;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #183a5c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>David González Martínez</h1>
+  <p>Analista de Datos | Python | SQL | Power BI | Estadística Aplicada</p>
+</header>
+
+<main class="container">
+
+  <h2>Proyectos destacados</h2>
+
+  <section class="projects-grid">
+
+    <article class="card">
+      <img src="assets/img/pef2026.png" alt="Dashboard PEF 2026">
+
+      <div class="card-content">
+        <h3>PEF 2026</h3>
+
+        <span class="tag">Power BI</span>
+        <span class="tag">DAX</span>
+        <span class="tag">Sector público</span>
+
+        <div class="rating">★★★★★</div>
+
+        <p>
+          Dashboard ejecutivo para analizar el Presupuesto de Egresos de la Federación 2026
+          por ramo, unidad responsable y entidad federativa.
+        </p>
+
+        <a class="button" href="https://davidgmtz.github.io/proyectoBI_PEF/" target="_blank">
+          Ver proyecto
+        </a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="assets/img/ecommerce.png" alt="Dashboard de ventas e-commerce">
+
+      <div class="card-content">
+        <h3>Ventas E-commerce</h3>
+
+        <span class="tag">Power BI</span>
+        <span class="tag">KPIs</span>
+        <span class="tag">Ventas</span>
+
+        <div class="rating">★★★★★</div>
+
+        <p>
+          Análisis comercial de ventas, ticket promedio, categorías, desempeño temporal
+          y comportamiento de clientes.
+        </p>
+
+        <a class="button" href="#" target="_blank">
+          Próximamente
+        </a>
+      </div>
+    </article>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 David González Martínez | Portafolio de Datos</p>
+</footer>
+
+</body>
+</html>
